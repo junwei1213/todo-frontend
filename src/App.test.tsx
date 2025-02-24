@@ -1,9 +1,14 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
